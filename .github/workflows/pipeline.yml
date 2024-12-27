@@ -37,9 +37,9 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t my-image:latest .
+          docker build -t testga:latest .
 
       # Run the Docker container
       - name: Run Docker container
         run: |
-          docker run --rm my-image:latest
+          docker run --rm testga:latest
