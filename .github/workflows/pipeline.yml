@@ -16,7 +16,6 @@ jobs:
         image: docker:24.0.5-dind
         options: >-
           --privileged
-          --network host
     steps:
       # Checkout the repository
       - name: Checkout code
