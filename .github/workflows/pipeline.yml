@@ -38,6 +38,15 @@ jobs:
           docker build -t testga:latest .
 
       # Run the Docker container
-      - name: Run Docker container
+      # - name: Run Docker container
+      #   run: |
+      #     docker run --rm testga:latest
+      # Run the Docker container
+      - name: retag Docker container
         run: |
-          docker run --rm testga:latest
+          docker tag testga:latest ${{ secrets.DOCKER_USERNAME }}/testga:latest
+
+      # Run the Docker container
+      - name: push Docker container
+        run: |
+           docker push ${{ secrets.DOCKER_USERNAME }}/testga:latest
